@@ -84,7 +84,7 @@ Isi _notebook_ harus mengikuti _outline_ di bawah ini:
 
 ### Code Review
 
-| Criteria | Meet Expectations | Points |
+| Criteria | Meet Expectations |
 | --- | --- |
 | SQL | Mampu melakukan query data dengan kriteria yang telah diberikan | 
 | Feature Engineering | Mampu melakukan preprocessing dataset sebelum melakukan proses modeling (split data, normalisasi, encoding, dll) |
@@ -99,14 +99,6 @@ Isi _notebook_ harus mengikuti _outline_ di bawah ini:
 | Hyperparameter Tuning | Mengimplementasikan Hyperparameter Tuning dengan Scikit-Learn |
 | Model Inference | Mencoba model yang telah dibuat dengan data baru |
 | Runs Perfectly | Kode berjalan tanpa ada error. Seluruh kode berfungsi dan dibuat dengan benar |
-
-
-### Analysis
-
-| Criteria | Meet Expectations | Points|
-| --- | --- | --- |
-| Model Analysis | Menganalisa informasi dari model yang telah dibuat | 35 pts |
-| Overall Analysis | Menarik informasi/kesimpulan dari keseluruhan kegiatan yang dilakukan | 20 pts |
 
 ## Conclusion
 1. EDA Analysis :
