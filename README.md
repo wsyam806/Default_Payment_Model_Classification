@@ -1,13 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11432892&assignment_repo_type=AssignmentRepo)
-# Milestones 1
-
-*Milestones ini dibuat guna mengevaluasi pembelajaran pada Hacktiv8 Data Science Fulltime Program khususnya pada Phase 1 dalam konsep Supervised Learning.*
-
----
-
-## Assignment Objectives
-
-*Milestone 1* ini dibuat guna mengevaluasi konsep Supervised Learning sebagai berikut:
+*Objectives
 
 - Mampu memperoleh data menggunakan BigQuery.
 
@@ -23,44 +14,14 @@
 
 ## Dataset
 
-```{attention}
-Perhatikan petunjuk penggunaan dataset!
-```
+1. dataset `ml_datasets` dari database bernama `credit_card_default`.
 
-1. Buka [Google Cloud Platform](https://console.cloud.google.com/), masuk ke BigQuery, lalu buka tab `bigquery-public-data` atau klik link [berikut](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=samples&page=dataset&_ga=2.245085957.1471931019.1642739417-486643658.1638156099) atau link [berikut](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=ml_datasets&t=credit_card_default&page=table) untuk langsung menuju ke dataset.
-
-2. Gunakan dataset `ml_datasets` dari database bernama `credit_card_default`.
-
-3. Buatlah query dengan kriteria sebagai berikut:
+2. Query dengan kriteria sebagai berikut:
    - Pilih **HANYA** kolom `limit_balance, sex, education_level, marital_status, age, pay_0, pay_2, pay_3, pay_4, pay_5, pay_6, bill_amt_1, bill_amt_2, bill_amt_3, bill_amt_4, bill_amt_5, bill_amt_6, pay_amt_1, pay_amt_2, pay_amt_3, pay_amt_4, pay_amt_5, pay_amt_6, default_payment_next_month`.
-   
-   - Pada kolom yang diambil diatas, terdapat beberapa kolom bertipe `STRING`. Pada saat pengambilan data dengan menggunakan perintah `SELECT`, lakukan konversi tipe data kolom-kolom bertipe `STRING` ke tipe numerik dengan panduan dibawah ini : 
-     | Kolom | Tipe Data Awal | Tipe Data Akhir |
-     | --- | --- | --- |
-     | `sex` | STRING | INT |
-     | `education_level` | STRING | INT |
-     | `marital_status` | STRING | INT |
-     | `pay_5` | STRING | FLOAT |
-     | `pay_6` | STRING | FLOAT |
-     | `default_payment_next_month` | STRING | INT |
-   
-   - Konversi tipe data harus dilakukan dalam sintaks yang sama saat melakukan query ke Google BigQuery.
-   
-   - Kolom diatas hanya digunakan sebagai dataset awal. Silakan lakukan Feature Selection di-notebook setelah dataset dibuat.
-   
-   - Limit jumlah data menjadi sebanyak `nomor batch dikali dengan tahun lahir kalian`. ex: Batch 10 dan lahir tahun 1995, 10 x 1995 = 19950.
-
-4. Simpan dataset dalam bentuk csv, dengan nama `h8dsft_P1M1_<nama-students>.csv`.
-
-5. Salin query yang telah dibuat di Google Cloud Platform, tulislah pada bagian atas notebook !
-
-6. Tampilkan `10 data pertama` dan `10 data terakhir` dari dataset pada notebook !
-
----
 
 ## Problems
 
-Buatlah model Classification untuk memprediksi `default_payment_next_month` menggunakan dataset yang sudah kalian simpan.
+Membuat model Classification untuk memprediksi `default_payment_next_month` menggunakan dataset yang sudah kalian simpan.
 
 ---
 
@@ -80,15 +41,9 @@ _Jawab pertanyaan berikut:_
 
 ---
 
-## Assignment Instructions
+## Project Instruction
 
-_Milestones 1_ dikerjakan dalam format _notebook_ dengen beberapa **kriteria wajib** di bawah ini:
-
-1. Machine learning framework yang digunakan adalah _Scikit-Learn_.
-
-2. Ada penggunaan library visualisasi, seperti _matplotlib_, _seaborn_, atau yang lain.
-
-3. Isi _notebook_ harus mengikuti _outline_ di bawah ini:
+Isi _notebook_ harus mengikuti _outline_ di bawah ini:
    1. Perkenalan
       > Bab pengenalan harus diisi dengan identitas, **query yang telah kalian buat pada Google Cloud Platform!**, dan _objective_ yang ingin dicapai.
 
@@ -125,74 +80,26 @@ _Milestones 1_ dikerjakan dalam format _notebook_ dengen beberapa **kriteria waj
    12. Pengambilan Kesimpulan
        > Pada bagian terakhir ini, **harus berisi** kesimpulan yang mencerminkan hasil yang didapat dengan _objective_ yang sudah ditulis di bagian pengenalan.
 
-4. *Notebook* harus diupload dalam akun GitHub masing-masing student untuk selanjutnya dinilai.
-
-5. Presentasikan model yang telah dibuat pada P1W3D5AM.
-
----
-
-## Assignment Submission
-
-- Simpan assignment pada sesi ini dengan nama `h8dsft_P1M1_<nama-student>.ipynb`, misal `h8dsft_P1M1_raka_ardhi.ipynb`.
-
-- Push Assigment yang telah Anda buat ke akun Github Classroom Anda masing-masing.
-
----
-
-## Assignment Rubrics
+## Rubrics
 
 ### Code Review
 
 | Criteria | Meet Expectations | Points |
-| --- | --- | --- |
-| SQL | Mampu melakukan query data dengan kriteria yang telah diberikan | 15 pts |
-| Feature Engineering | Mampu melakukan preprocessing dataset sebelum melakukan proses modeling (split data, normalisasi, encoding, dll) | 35 pts |
-| Logistic Regression | Mengimplementasikan Logistic Regression dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| SVM | Mengimplementasikan SVM dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| Decision Tree | Mengimplementasikan Decision Tree dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| Random Forest | Mengimplementasikan Random Forest dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| KNN | Mengimplementasikan KNN dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| Naive Bayes | Mengimplementasikan Naive Bayes dan menentukan hyperparameter yang tepat dengan Scikit-Learn | 5 pts |
-| Other Algorithm | Mengimplementasikan algoritma lain selain yang tersebut diatas dan menentukan hyperparameter yang tepat | 5 pts |
-| Cross Validation | Mengimplementasikan Cross Validation dengan Scikit-Learn | 25 pts |
-| Hyperparameter Tuning | Mengimplementasikan Hyperparameter Tuning dengan Scikit-Learn | 20 pts |
-| Model Inference | Mencoba model yang telah dibuat dengan data baru | 10 pts |
-| Runs Perfectly | Kode berjalan tanpa ada error. Seluruh kode berfungsi dan dibuat dengan benar | 10 pts |
+| --- | --- |
+| SQL | Mampu melakukan query data dengan kriteria yang telah diberikan | 
+| Feature Engineering | Mampu melakukan preprocessing dataset sebelum melakukan proses modeling (split data, normalisasi, encoding, dll) |
+| Logistic Regression | Mengimplementasikan Logistic Regression dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| SVM | Mengimplementasikan SVM dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| Decision Tree | Mengimplementasikan Decision Tree dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| Random Forest | Mengimplementasikan Random Forest dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| KNN | Mengimplementasikan KNN dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| Naive Bayes | Mengimplementasikan Naive Bayes dan menentukan hyperparameter yang tepat dengan Scikit-Learn |
+| Other Algorithm | Mengimplementasikan algoritma lain selain yang tersebut diatas dan menentukan hyperparameter yang tepat | 
+| Cross Validation | Mengimplementasikan Cross Validation dengan Scikit-Learn |
+| Hyperparameter Tuning | Mengimplementasikan Hyperparameter Tuning dengan Scikit-Learn |
+| Model Inference | Mencoba model yang telah dibuat dengan data baru |
+| Runs Perfectly | Kode berjalan tanpa ada error. Seluruh kode berfungsi dan dibuat dengan benar |
 
-```
-Pada rubrik Milestone 1 diatas terdapat point Cross Validation dan Hyperparameter Tuning (GridSearchCV, RandomSearchCV, dll). 
-Kedua hal yang dimaksud ini adalah dua hal yang berbeda bukan satu kesatuan. Petunjuk : 
-
-1. Lakukan model training dengan menggunakan parameter default (baseline model) dari setiap algoritma yang diminta.
-2. Kemudian, gunakan `cross_val_score` atau `cross_validate` untuk mencari nilai performansi `mean` dan `std` dari setiap model. 
-3. Pilih agoritma yang terbaik dari hasil poin 2.
-4. Lakukan Hyperparameter Tuning pada algoritma terbaik (berdasarkan poin 2) dengan menggunakan GridSearchCV, RandomSearchCV, dll.
-5. Bandingkan performansi antara sebelum dan sesudah dilakukan Hyperparameter Tuning.
-```
-
-### Concepts
-
-| Criteria | Meet Expectations | Points |
-| --- | --- | --- |
-| Classifications | Mampu menjawab pertanyaan dengan singkat, jelas, dan padat serta sesuai dengan konsep dan logika yang ada mengenai Conceptual Problems (10 each number) | 50 pts |
-
-### Readability
-
-| Criteria | Meet Expectations | Points |
-| --- | --- | --- |
-| Tertata Dengan Baik | Semua baris kode terdokumentasi dengan baik dengan Markdown untuk penjelasan kode | 15 pts |
-
-```
-Kriteria tertata dengan baik diantaranya adalah: 
-
-1. Terdapat section Perkenalan yang jelas dan lengkap terkait masalah dan latar belakang masalah yang akan diselesaikan.
-2. Tidak menyalin markdown dari tugas lain.
-3. Import library rapih (terdapat dalam 1 cell dan tidak ada unused libs).
-4. Pemakaian fungsi markdown yang optimal (Heading, text formating, dll).
-5. Terdapat komentar pada setiap baris kode.
-6. Adanya pemisah yang jelas antar section, dll.
-7. Tidak adanya typo.
-```
 
 ### Analysis
 
@@ -201,25 +108,37 @@ Kriteria tertata dengan baik diantaranya adalah:
 | Model Analysis | Menganalisa informasi dari model yang telah dibuat | 35 pts |
 | Overall Analysis | Menarik informasi/kesimpulan dari keseluruhan kegiatan yang dilakukan | 20 pts |
 
-```
-Contoh kriteria analisa yang baik diantaranya adalah: 
+## Conclusion
+1. EDA Analysis :
+Credit default mostly happen in age 25 until 36
+Default credit is more significantly happen in gender Female
+Education level University mostly appear as credit_default user, 2nd is Graduated School
+2. Feature Scaling :
+Chi Square
+3. Feature not included for modeling :
+sex, education_level, marital_status, age, bill_amt_1, bill_amt_2, bill_amt_3, bill_amt_4, bill_amt_5, bill_amt_6, pay_amt_5 and pay_amt_6
 
-1. Terdapat penjelasan macam-macam hasil metric evaluasi dan interpretasinya terhadap kasus yang diselesaikan.
-2. Dapat menjelaskan KELEBIHAN dan KELEMAHAN dari model yang dibuat DENGAN KAITANNYA DENGAN DOMAIN BUSINESS YANG DIHADAPI yang dibuktikan dengan eksplorasi sederhana (grafik, plot, teori, dll).
-3. Dapat memberikan statement untuk improvement selanjutnya dari model yang dibuat. 
-4. Dapat menyebutkan insight yang dapat diambil setelah proses EDA, dll.
-```
+4. Feature selected for modeling :
+pay_0, pay_2, pay_3, pay_4, pay_05, pay_06, limit_balance, pay_amt_2, pay_amt_3, pay_amt_1 and pay_amt_4
 
----
+5. Model Train :
+LogisticRegression
+SVC
+DecisionTreeClassifier
+RandomForestClassifier
+KNeighborsClassifier
+GaussianNB (Naive Bayes)
+6. Model selected :
+Random Forest Classification
+Parameter :
+{'model__n_estimators': 90, 'model__max_features': 3, 'model__max_depth': 3, 'model__criterion': 'entropy'}
 
-```
-Total Points : 270
-```
-
----
-
-## Notes
-
-- **Deadline : P1W3D3 pukul 23:59 WIB.**
-
-- **Keterlambatan pengumpulan tugas mengakibatkan skor Milestone 1 menjadi 0.**
+Model Accuracy 83%
+Model Precission 75%
+Model F1 Score 45%
+Model Recall Score 32%
+Cross validation roc_auc mean (10 sample) 83%
+7. Model Test New Dataset Result
+score 90% from 9/10 new dataset
+FINAL CONCLUSION
+Random Forest Classification model showed promising results for credit default prediction. It demonstrated high accuracy and F1-scores on both the test dataset and new datasets. The selected features, after excluding certain variables, provided meaningful insights for modeling credit default risk.
